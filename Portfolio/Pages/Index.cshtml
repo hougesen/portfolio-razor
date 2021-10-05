@@ -1,0 +1,60 @@
+@page
+@model IndexModel
+@{
+    await Model.FetchGithubUser();
+    ViewBag.Title = Model.Profile.FullName;
+    ViewBag.Description = Model.Profile.Description;
+}
+
+<div class="default-width">
+    <div class="hero__grid">
+        <div class="hero__grid-item hero_image hero_image--mobile">
+            <img src="@Model.Profile.ProfileImage" alt="profile image" />
+        </div>
+
+        <div class="hero__grid-item hero__grid-text">
+            <h1 class="section__title">
+                <span class="highlight-color"> Hi, </span>
+                I'm @Model.Profile.FullName
+            </h1>
+
+            <p>@Model.Profile.Description</p>
+        </div>
+
+        <div class="hero__grid-item hero_image hero_image--desktop">
+            <img src="@Model.Profile.ProfileImage" alt="profile image" />
+        </div>
+    </div>
+
+    <section>
+        <h1 class="section__title">Projects</h1>
+
+        <div class="project__list">
+            @foreach (var repository in Model.Profile.Repositories)
+            {
+                <div class="project">
+                    <div class="project__text">
+                        <div class="project_header">
+                            <h2 class="project__title">
+                                <a href="@repository.GithubUrl" target="_blank" rel="noreferrer noopener">
+                                    @repository.Name
+                                </a>
+                            </h2>
+                        </div>
+
+                        <p class="project__description">@repository.Description</p>
+
+                        <div class="project__tags">
+                            @foreach (var language in repository.Languages)
+                            {
+                                <p class="project__tag" style="background-color: @language.Color">
+                                    @language.Name
+                                </p>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+</div>;

@@ -1,0 +1,213 @@
+﻿/* CSS reset + default stuff */
+:root {
+    --black: #101010;
+    --highlight-color: #ff142e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    transition: 0.4s;
+    line-height: 1.6;
+    color: var(--black);
+}
+
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    line-height: 1.6;
+}
+
+body,
+html {
+    scroll-behavior: smooth;
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;
+    padding-top: 0;
+    width: 100%;
+    color: var(--black);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-size: clamp(1rem, 7.458rem, 3.5rem);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.7rem;
+}
+
+.subheading {
+    font-size: 1.2rem;
+}
+
+.default-width {
+    margin: 0 6% 5rem 6%;
+}
+
+.highlight-color {
+    color: var(--highlight-color);
+}
+
+/* Hero */
+.hero__grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 2rem;
+}
+
+.hero__grid .hero__grid-item {
+    width: 100%;
+}
+
+.hero__grid .hero__grid-text {
+    margin: auto;
+}
+
+.hero__grid .hero__grid-text .section__title {
+    margin-bottom: 0;
+}
+
+.hero__grid .hero__grid-text p {
+    font-size: 1.125rem;
+}
+
+.hero__grid .hero_image {
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: right;
+    width: 70%;
+    border-radius: 50%;
+}
+
+.hero__grid .hero_image img {
+    border-radius: 50%;
+}
+
+.hero__grid .hero_image--desktop {
+    display: block;
+    border-radius: 50%;
+}
+
+.hero__grid .hero_image--mobile {
+    display: none;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+}
+
+.hero__grid .hero_image--mobile img {
+    width: 100%;
+}
+
+/* Projects */
+.project__list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2rem;
+}
+
+.project__list .project {
+    width: 100%;
+    background-color: #fff;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #101010;
+    position: relative;
+    padding-bottom: 3rem;
+}
+
+.project__list .project .project__text .project_header {
+    display: flex;
+}
+
+.project__list .project .project__text .project_header .project__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    text-transform: lowercase;
+}
+
+.project__list .project .project__text .project_header .project__title a {
+    text-decoration: none;
+}
+
+.project__list .project .project__text .project__description {
+    margin-bottom: 0.5rem;
+}
+
+.project__list .project .project__text .project__tags {
+    display: flex;
+    position: absolute;
+    bottom: 1rem;
+}
+
+.project__list .project .project__text .project__tags .project__tag {
+    font-size: 0.8rem;
+    color: white;
+    margin-right: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 2px;
+}
+
+/* Media */
+
+@media screen and (min-width: 600px) {
+    .hero__grid .hero_image--mobile img {
+        width: 70%;
+        max-width: 350px;
+    }
+}
+
+@media screen and (min-width: 1368px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    .default-width {
+        margin: 0 10% 5rem 10%;
+    }
+
+    .hero__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero__grid .hero__grid-text p {
+        font-size: 1.5rem;
+    }
+
+    .project__list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 1367px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .hero__grid .hero_image--desktop {
+        display: none;
+    }
+
+    .hero__grid .hero_image--mobile {
+        display: block;
+    }
+}
