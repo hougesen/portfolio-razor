@@ -1,8 +1,8 @@
 # portfolio-razor
 
-Replica of my [portfolio](https://mhouge.dk) made using C# Razor.
+Replica of my [portfolio](https://github.com/hougesen/portfolio) made using C# Razor.
 
-The website automaticcally fetches data from my [Github](https://github.com/hougesen) using the Gihub GraphQL API.
+This website automatically fetches data from my [Github](https://github.com/hougesen) using the Github GraphQL API.
 
 Feel free to use it as a template if you wish.
 
