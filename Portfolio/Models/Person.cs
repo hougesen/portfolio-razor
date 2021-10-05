@@ -16,5 +16,6 @@
 
         public string TwitterUserName { get; set; }
 
+        public Repository[] Repositories { get; set; }
     }
 }
