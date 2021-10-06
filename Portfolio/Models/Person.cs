@@ -1,4 +1,6 @@
-﻿namespace Portfolio.Models
+using System.Collections.Generic;
+
+namespace Portfolio.Models
 {
     public class Person
     {
@@ -16,6 +18,6 @@
 
         public string TwitterUserName { get; set; }
 
-        public Repository[] Repositories { get; set; }
+        public List<Repository> Repositories { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace Portfolio.Models
+using System.Collections.Generic;
+
+namespace Portfolio.Models
 {
     public class Repository
     {
@@ -10,7 +12,7 @@
 
         public string HomepageUrl { get; set; }
 
-        public RepositoryLanguage[] Languages { get; set; }
+        public List<RepositoryLanguage> Languages { get; set; }
     }
 
     public class RepositoryLanguage
